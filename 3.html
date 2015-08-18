@@ -1,0 +1,19 @@
+    <script src="http://code.angularjs.org/1.2.1/angular.min.js"></script>
+	<script>
+    function Controller($scope) {
+		$scope.counter = 0;
+		$scope.change = function() {
+		$scope.counter++;
+		};
+	}
+	</script>
+	<div ng-app>
+		<div ng-controller="Controller">
+			<input type="checkbox" ng-model="confirmed" ng-change="change()"  />
+			<input type="checkbox" ng-model="confirmed" id="ng-change-example1" />
+			<label for="ng-change-example1">Confirmed</label><br />
+			debug = {{confirmed}}<br />
+			counter = {{counter}}
+		</div>
+    </div>
+    

@@ -1,0 +1,16 @@
+<script src="http://code.angularjs.org/1.2.1/angular.min.js"></script>
+<div ng-app ng-init="names=[
+							{id:1,name:'Anuj'},
+							{id:2,name:'Suresh'},
+							{id:3,name:'Baldev'},
+							{id:4,name:'Suraj'},
+							{id:5,name:'Mandeep'},
+							{id:6,name:'Sunny'},
+							{id:7,name:'Heena'}
+						]">
+	<h3>Looking with ng-repeat directive</h3>
+	<input type="text" ng-model='name' />{{name}}<br/>
+	<ul>
+		<li ng-repeat='user in names | filter:name | orderBy:"id"'>{{user.id}} - {{user.name | uppercase}}</li>
+	</ul>
+</div>	

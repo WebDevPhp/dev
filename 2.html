@@ -1,0 +1,18 @@
+<html ng-app="myApppp">
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular.js"></script>
+		<script>
+			var myAppModule = angular.module("myApppp",[]);
+			myAppModule.controller("Application",function($scope){
+				var message = {};
+				message.title = "This is my first example";
+				$scope.message = message;
+			});
+		</script>
+		<body>
+			<div ng-controller="Application">
+				<p>{{message.title}}</p>
+			</div>
+		</body>
+	</head>
+</html>

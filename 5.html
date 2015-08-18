@@ -1,0 +1,28 @@
+    <!doctype html>
+    <html ng-app>
+    <head>
+    <script src="http://code.angularjs.org/1.2.1/angular.min.js"></script>
+    <script>
+	function Ctrl($scope) {
+		$scope.fname = '';
+		$scope.lname = "";
+		$scope.gender = "";
+    }
+	</script>
+    </head>
+    <body>
+		<form name="myForm" ng-controller="Ctrl">
+				First Name: <input name="fname" ng-model="fname" placeholder="First Name" required><br/>
+				<span class="error" ng-show="myForm.input.$error.required">Required!</span><br/>
+				Last Name: <input name="lname" ng-model="lname" placeholder="Last Name" required>
+				<span class="error" ng-show="myForm.input.$error.required">Required!</span><br/><br/>
+				Gender :
+				<input type="radio" value="Male" ng-model="gender" />Male
+				<input type="radio" value="Female" ng-model="gender" />Female
+				<span class="error" ng-show="myForm.input.$error.required">Required!</span><br/>
+				<p>First Name = {{fname}}</p>
+				<p>Last Name = {{lname}}</p>
+				<p>Gender = {{gender}}</p>
+			</form>
+    </body>
+    </html>

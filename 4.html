@@ -1,0 +1,19 @@
+<script src="angular.js" type="text/javascript"></script>
+<script>
+function StartUpController($scope)
+{
+	$scope.funding = { startingEstimate: 0 };
+	$scope.computeNeeded = function()
+	{
+		$scope.funding.needed = $scope.funding.startingEstimate * 10;
+	}
+}
+</script>
+<div ng-app>
+	<form ng-controller="StartUpController">
+	Starting: <input ng-change="computeNeeded()" ng-model="funding.startingEstimate">
+	Recommendation: {{funding.needed}}
+	
+	new: {{funding.startingEstimate}}
+	</form>
+</div>

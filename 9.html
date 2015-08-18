@@ -1,0 +1,24 @@
+<script src="http://code.angularjs.org/1.2.1/angular.min.js"></script>
+<script>
+	function UserDetail($scope){
+		$scope.users = [
+			{id:1,name:'anuj',age:27,address:'pathankot'},
+			{id:2,name:'raghav',age:19,address:'ludhiana'},
+			{id:3,name:'sourav',age:52,address:'batala'},
+			{id:4,name:'mohit',age:34,address:'yamunanagar'},
+			{id:5,name:'suresh',age:62,address:'panipat'},
+			{id:6,name:'ramdev',age:15,address:'navansahar'},
+			{id:7,name:'vedvyas',age:42,address:'mohali'},
+			{id:8,name:'neelam',age:22,address:'bilaspur'},
+			{id:9,name:'parteek',age:37,address:'lakhnow'}
+		];
+	}
+</script>
+<div ng-app ng-controller="UserDetail">
+	<input type="text" ng-model='name' placeholder='Enter Name'/>{{name}}<br/>
+	<ul>
+		<li ng-repeat='user in users | filter:name'>
+		 {{user.name}} 
+		</li>
+	</ul>
+</div>
